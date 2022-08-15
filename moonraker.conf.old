@@ -27,10 +27,10 @@ trusted_clients:
 
 [history]
 
+[octoprint_compat]
+
 [file_manager]
 enable_object_processing: True
-
-[octoprint_compat]
 
 [update_manager]
 enable_auto_refresh: True
@@ -60,3 +60,9 @@ install_script: install.sh
 type: web
 repo: alchemyEngine/klipper
 path: ~/klipper-frame_expansion
+
+[update_manager mainsail]
+type: web
+channel: stable
+repo: mainsail-crew/mainsail
+path: ~/mainsail
