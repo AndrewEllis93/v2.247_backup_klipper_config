@@ -1,59 +1,62 @@
 [server]
-host: 0.0.0.0
-port: 7125
-enable_debug_logging: False
-config_path: ~/klipper_config
-temperature_store_size: 600
-gcode_store_size: 1000
-log_path: /tmp
+host = 0.0.0.0
+port = 7125
+enable_debug_logging = False
+klippy_uds_address = /tmp/klippy_uds
+
+[file_manager]
+log_path = ~/klipper_logs
+config_path = ~/klipper_config
+enable_object_processing = True
+
+[data_store]
+temperature_store_size = 600
+gcode_store_size = 1000
+
+[database]
+database_path = ~/.moonraker_database
 
 [authorization]
-force_logins: true
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+cors_domains = 
+	*.local
+	*.lan
+	*://app.fluidd.xyz
+	*://my.mainsail.xyz
 
-cors_domains:
-  *.local
-  *.lan
-  *://app.fluidd.xyz
-  *://my.mainsail.xyz
-
-trusted_clients:
-  10.0.0.0/8
-  127.0.0.0/8
-  169.254.0.0/16
-  172.16.0.0/12
-  192.168.0.0/16
-  FE80::/10
-  ::1/128
+[octoprint_compat]
 
 [history]
 
-#[octoprint_compat]
-
 [update_manager]
-enable_auto_refresh: True
-
-#[update_manager client klipper-frameexpansion]
-#type: web
-#repo: alchemyEngine/klipper
-#path: ~/klipper
+channel = dev
+enable_auto_refresh = True
 
 [update_manager client fluidd]
-type: web
-repo: cadriel/fluidd
-path: ~/fluidd
+type = web
+repo = cadriel/fluidd
+path = ~/fluidd
 
 [update_manager mainsail]
-type: web
-repo: mainsail-crew/mainsail
-path: ~/mainsail 
+type = web
+repo = mainsail-crew/mainsail
+path = ~/mainsail
 
 [update_manager client z_calibration]
-type: git_repo
-path: /home/pi/klipper_z_calibration
-origin: https://github.com/protoloft/klipper_z_calibration.git
-install_script: install.sh
+type = git_repo
+path = /home/pi/klipper_z_calibration
+origin = https://github.com/protoloft/klipper_z_calibration.git
+install_script = install.sh
 
 [update_manager client klipper-frameexpansion]
-type: web
-repo: alchemyEngine/klipper
-path: ~/klipper-frame_expansion
+type = web
+repo = alchemyEngine/klipper
+path = ~/klipper-frame_expansion
+
