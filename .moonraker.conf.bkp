@@ -51,11 +51,6 @@ path = /home/pi/klipper_z_calibration
 origin = https://github.com/protoloft/klipper_z_calibration.git
 install_script = install.sh
 
-[update_manager client klipper-frameexpansion]
-type = web
-repo = alchemyEngine/klipper
-path = ~/klipper-frame_expansion
-
 [update_manager KlipperScreen]
 type = git_repo
 path = ~/KlipperScreen
